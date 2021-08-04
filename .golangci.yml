@@ -168,7 +168,7 @@ linters-settings:
     # put imports beginning with prefix after 3rd-party packages;
     # only support one prefix
     # if not set, use goimports.local-prefixes
-    local-prefixes: github.com/org/project
+    local-prefixes:
 
   gocognit:
     # minimal code complexity to report, 30 by default (but we recommend 10-20)
@@ -239,8 +239,8 @@ linters-settings:
     scope: declarations
     # list of regexps for excluding particular comment lines from check
     exclude:
-    # example: exclude comments which contain numbers
-    # - '[0-9]+'
+      # example: exclude comments which contain numbers
+      - 'Deprecated'
     # check that each sentence starts with a capital letter
     capital: false
 
@@ -349,6 +349,8 @@ linters-settings:
     # Available rules: https://github.com/securego/gosec#available-rules
     excludes:
       - G204
+      - G401
+
     # To specify the configuration of rules.
     # The configuration of rules is not fully documented by gosec:
     # https://github.com/securego/gosec#configuration
@@ -426,7 +428,7 @@ linters-settings:
   lll:
     # max line length, lines longer will be reported. Default is 120.
     # '\t' is counted as 1 character by default, and can be changed with the tab-width option
-    line-length: 120
+    line-length: 145
     # tab width in spaces. Default to 1.
     tab-width: 1
 
@@ -507,10 +509,10 @@ linters-settings:
       - name: add-constant
         severity: warning
         arguments:
-          - maxLitCount: "3"
+          - maxLitCount: "10"
             allowStrs: '""'
-            allowInts: "0,1,2"
-            allowFloats: "0.0,0.,1.0,1.,2.0,2."
+            allowInts: "0,1,2,3,4,5,6,7,8,9,10,12,28,30,31,62,65,90,97,122,2048,0755"
+            allowFloats: "0.0,0.,1.0,1.,1.3,2.0,2."
 
   staticcheck:
     # Select the Go version to target. The default is '1.13'.
@@ -616,6 +618,13 @@ linters:
     - prealloc
     - nlreturn
     - wsl
+    - nolintlint
+    - wrapcheck
+    - gomnd
+    - goerr113
+    - gochecknoglobals
+    - gocritic
+    - gci
   fast: false
 
 
