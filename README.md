@@ -2,10 +2,8 @@
 
 FastRouter是一个快速、轻量级的 [fasthttp](https://github.com/valyala/fasthttp) 路由✨。
 
-
 [![GoDoc](https://pkg.go.dev/badge/github.com/gorpher/fastrouter)](https://pkg.go.dev/github.com/gorpher/fastrouter)
-[![Build Status](https://api.travis-ci.org/gorpher/fastrouter.svg?branch=main&status=passed)](https://travis-ci.org/gorpher/fastrouter)
-
+[![Build Status](https://www.travis-ci.com/gorpher/fastrouter.svg?branch=main)](https://www.travis-ci.com/gorpher/fastrouter)
 
 目前使用的http路由器大多都是使用`tree`数据结构实现路由功能。 而且很多路由集成了不必要的功能，导致依赖越亮越臃肿。
 
